@@ -1,46 +1,32 @@
-import { createRequire } from 'module';
 import type { Pokemon, Move, Ability, Item, TypeData, Learnset } from './types.js';
 
-const require = createRequire(import.meta.url);
-
-let _pokedex: Record<string, Pokemon> | null = null;
-let _moves: Record<string, Move> | null = null;
-let _abilities: Record<string, Ability> | null = null;
-let _items: Record<string, Item> | null = null;
-let _typechart: Record<string, TypeData> | null = null;
-let _learnsets: Record<string, Learnset> | null = null;
-
-function load<T>(cached: T | null, file: string): T {
-    if (cached) return cached;
-    return require(`../data/${file}.json`) as T;
-}
+import pokedex from '../data/pokedex.json' with { type: 'json' };
+import movesData from '../data/moves.json' with { type: 'json' };
+import abilitiesData from '../data/abilities.json' with { type: 'json' };
+import itemsData from '../data/items.json' with { type: 'json' };
+import typechartData from '../data/typechart.json' with { type: 'json' };
+import learnsetsData from '../data/learnsets.json' with { type: 'json' };
 
 export function getPokedex(): Record<string, Pokemon> {
-    _pokedex = load(_pokedex, 'pokedex');
-    return _pokedex;
+    return pokedex as unknown as Record<string, Pokemon>;
 }
 
 export function getMoves(): Record<string, Move> {
-    _moves = load(_moves, 'moves');
-    return _moves;
+    return movesData as unknown as Record<string, Move>;
 }
 
 export function getAbilities(): Record<string, Ability> {
-    _abilities = load(_abilities, 'abilities');
-    return _abilities;
+    return abilitiesData as unknown as Record<string, Ability>;
 }
 
 export function getItems(): Record<string, Item> {
-    _items = load(_items, 'items');
-    return _items;
+    return itemsData as unknown as Record<string, Item>;
 }
 
 export function getTypechart(): Record<string, TypeData> {
-    _typechart = load(_typechart, 'typechart');
-    return _typechart;
+    return typechartData as unknown as Record<string, TypeData>;
 }
 
 export function getLearnsets(): Record<string, Learnset> {
-    _learnsets = load(_learnsets, 'learnsets');
-    return _learnsets;
+    return learnsetsData as unknown as Record<string, Learnset>;
 }
