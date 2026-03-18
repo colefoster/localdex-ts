@@ -9,6 +9,8 @@ export {
     getImmunities,
 } from './typechart.js';
 export { toId, getNatureModifier, getAllNatures } from './utils.js';
+export { spriteUrl, itemSpriteUrl, typeIconUrl, toSpriteId } from './sprites.js';
+export type { SpriteOptions, SpriteStyle } from './sprites.js';
 export type {
     Pokemon,
     Move,
