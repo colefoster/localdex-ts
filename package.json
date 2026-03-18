@@ -1,0 +1,37 @@
+{
+  "name": "@colefoster/localdex",
+  "version": "0.1.0",
+  "description": "Local Pokemon data library — species, moves, abilities, items, type chart, stat calculator. Data sourced from smogon/pokemon-showdown.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "scripts": {
+    "pull-data": "node scripts/pull-data.js",
+    "build": "tsc",
+    "prepublishOnly": "npm run pull-data && npm run build"
+  },
+  "keywords": [
+    "pokemon",
+    "showdown",
+    "pokedex",
+    "dex"
+  ],
+  "author": "Cole Foster",
+  "license": "MIT",
+  "devDependencies": {
+    "@pkmn/data": "^0.10.7",
+    "@pkmn/dex": "^0.10.7",
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}
