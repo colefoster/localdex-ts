@@ -13,7 +13,8 @@
   },
   "files": [
     "dist",
-    "data"
+    "data",
+    "NOTICE.md"
   ],
   "scripts": {
     "pull-data": "node scripts/pull-data.js",
@@ -33,5 +34,13 @@
     "@pkmn/dex": "^0.10.7",
     "@types/node": "^25.5.0",
     "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colefoster/localdex-ts.git"
+  },
+  "homepage": "https://github.com/colefoster/localdex-ts#readme",
+  "bugs": {
+    "url": "https://github.com/colefoster/localdex-ts/issues"
   }
 }
