@@ -1,6 +1,6 @@
 {
   "name": "localdex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local Pokemon data library — species, moves, abilities, items, type chart, stat calculator. Data sourced from smogon/pokemon-showdown.",
   "type": "module",
   "main": "dist/index.js",
